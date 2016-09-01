@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>海原县李俊乡北街生汆面馆</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/header.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/booking.css" />
+
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <header class="aui-bar aui-bar-nav">
+                <a class="aui-pull-left aui-btn" onclick="window.history.back()">
+                    <span class="aui-iconfont aui-icon-left"></span>
+                </a>
+                <div class="aui-title">海原县李俊乡北街生汆面馆</div>
+            </header>
+        </div>
+
+        <div id="content">
+            <div id="aui-slide">
+                <div class="aui-slide-wrap" >
+                    
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop/ljscm_shop1.jpg" />
+                        </div>
+                     
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop/ljscm_shop2.jpg" />
+                        </div>
+                     
+                </div>
+                <div class="aui-slide-page-wrap"><!--分页容器--></div>
+            </div>
+
+
+            <div class="shop_box">
+                <p class="adr"><strong>地址：</strong>海原县李俊乡李俊北街</p>
+
+                <div class="contant-btn">
+                    <a href="13209898989">订餐电话:13389598678</a>
+                </div>
+
+                <div class="food">
+                    <h1>特色菜：</h1>
+                    <ul>
+                        
+                            <li>
+                                <div class="clearfix">
+                                    <img class="fl" src="../../images/shop/ljscm_food1.jpg" width="40%" />
+                                    <h2 class="food_title fr">手抓羊羔肉</h2>
+                                </div>
+                                <p class="food_content"><strong>制作工序：</strong>购进本地优质滩羊羔宰杀，选用带骨的羊腰窝肉1公斤。调料：香菜、葱、姜丝、蒜末、调料适量备用。</p>
+
+                            </li>
+                        
+                            <li>
+                                <div class="clearfix">
+                                    <img class="fl" src="../../images/shop/ljscm_food2.jpg" width="40%" />
+                                    <h2 class="food_title fr">爆炒羊腰</h2>
+                                </div>
+                                <p class="food_content"><strong>制作工序：</strong>1、将羊腰窝肉剁成二寸长、五分宽的块，用水洗净。香菜去根洗净消毒，切成二分长的段。葱，三钱切成一寸长的段、二钱切末；2、把葱末，蒜末，香菜。酱油，味精，胡椒粉，芝麻油，辣椒油等对成调料汁；3、锅内倒入清水二斤，放入羊肉在旺火上烧开后，撇去浮沫，把肉捞出洗净。接着，再换清水三斤烧开，放入羊肉、大料、花椒、小茴香、桂皮、葱段、姜片、绍酒和精盐。待汤再烧开后，盖上锅盖，移在微火上煮到肉烂为止。将肉捞出，盛在盘内，蘸着调料汁吃。</p>
+
+                            </li>
+                        
+                            <li>
+                                <div class="clearfix">
+                                    <img class="fl" src="../../images/shop/ljscm_food3.jpg" width="40%" />
+                                    <h2 class="food_title fr">生汆面</h2>
+                                </div>
+                                <p class="food_content"><strong>制作工序：</strong>1、番茄、葱姜蒜切片，牛羊肉丸子中加少许香菜、部分葱姜蒜、酱油、盐腌制十分钟左右。2.热油，下葱姜蒜、番茄炒香。3.炒出汤汁的时候加少许花椒面、盐炒香。4.加水烧开。5、选用优质永良面粉和面，在开水锅中下成揪面片。6.倒入腌好的牛羊肉丸子，不要搅拌。7.煮开后把面和肉拌匀，加盐调味，煮熟出锅即可</p>
+
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="../../js/aui-slide.js"></script>
+    <script type="text/javascript">
+        var slide = new auiSlide({
+        container:document.getElementById("aui-slide"),
+        // "width":300,
+        "height":250,
+        "speed":300,
+        "pageShow":true,
+        "pageStyle":'dot',
+        "loop":true,
+        'dotPosition':'center',
+        currentPage:currentFun
+        })
+
+        function currentFun(index) {
+        console.log(index);
+        }
+
+        var popup = new auiPopup();
+        function showPopup(){
+        popup.show(document.getElementById("top-right"))
+        }
+
+    </script>
+</body>
+
+
+</html>

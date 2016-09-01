@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>海原县七营镇迎宾楼餐厅</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/header.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/booking.css" />
+
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <header class="aui-bar aui-bar-nav">
+                <a class="aui-pull-left aui-btn" onclick="window.history.back()">
+                    <span class="aui-iconfont aui-icon-left"></span>
+                </a>
+                <div class="aui-title">海原县七营镇迎宾楼餐厅</div>
+            </header>
+        </div>
+
+        <div id="content">
+            <div id="aui-slide">
+                <div class="aui-slide-wrap" >
+                    
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop/ybl_shop1.jpg" />
+                        </div>
+                     
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop/ybl_shop2.jpg" />
+                        </div>
+                     
+                </div>
+                <div class="aui-slide-page-wrap"><!--分页容器--></div>
+            </div>
+
+
+            <div class="shop_box">
+                <p class="adr"><strong>地址：</strong>海原县七营镇七营街181号</p>
+
+                <div class="contant-btn">
+                    <a href="13209898989">订餐电话:15709652175</a>
+                </div>
+
+                <div class="food">
+                    <h1>特色菜：</h1>
+                    <ul>
+                        
+                            <li>
+                                <div class="clearfix">
+                                    <img class="fl" src="../../images/shop/ybl_food1.jpg" width="40%" />
+                                    <h2 class="food_title fr">炒肉片</h2>
+                                </div>
+                                <p class="food_content"><strong>制作工序：</strong>1.将肉切成长4厘米、宽2厘米的薄片，侵泡好的本地产优质洋芋粉粉条适量， 木耳摘洗干净。2.将肉片放入碗内，放上少许盐、蛋清、水淀粉，拌勺挂好浆。锅内倒入胡麻油适量，烧至五成热时，放入肉片，用铁筷子拨散，将油滗出。3.锅内留油少许，放入葱姜蒜炝锅，炸出香味后，烹入醋，随即放入粉条、青辣椒等配料、酱油、料酒、汤、味精，用水淀粉勾芡，淋上花椒油，颠翻均匀即成。</p>
+
+                            </li>
+                        
+                            <li>
+                                <div class="clearfix">
+                                    <img class="fl" src=" ../../images/shop/ybl_food2.jpg" width="40%" />
+                                    <h2 class="food_title fr">酸辣土豆丝</h2>
+                                </div>
+                                <p class="food_content"><strong>制作工序：</strong>   </p>
+
+                            </li>
+                        
+                            <li>
+                                <div class="clearfix">
+                                    <img class="fl" src=" ../../images/shop/ybl_food3.jpg" width="40%" />
+                                    <h2 class="food_title fr">油炸豆腐</h2>
+                                </div>
+                                <p class="food_content"><strong>制作工序：</strong>        </p>
+
+                            </li>
+                        
+                            <li>
+                                <div class="clearfix">
+                                    <img class="fl" src=" ../../images/shop/ybl_food4.jpg" width="40%" />
+                                    <h2 class="food_title fr">土豆烧牛肉</h2>
+                                </div>
+                                <p class="food_content"><strong>制作工序：</strong>         </p>
+
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="../../js/aui-slide.js"></script>
+    <script type="text/javascript">
+        var slide = new auiSlide({
+        container:document.getElementById("aui-slide"),
+        // "width":300,
+        "height":250,
+        "speed":300,
+        "pageShow":true,
+        "pageStyle":'dot',
+        "loop":true,
+        'dotPosition':'center',
+        currentPage:currentFun
+        })
+
+        function currentFun(index) {
+        console.log(index);
+        }
+
+        var popup = new auiPopup();
+        function showPopup(){
+        popup.show(document.getElementById("top-right"))
+        }
+
+    </script>
+</body>
+
+
+</html>

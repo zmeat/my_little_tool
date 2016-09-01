@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%= _.get(_.get(locals, "data", {}), "title", '')%></title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="/css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="/css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="/css/header.css" />
+    <link rel="stylesheet" type="text/css" href="/css/booking.css" />
+
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <header class="aui-bar aui-bar-nav">
+                <a class="aui-pull-left aui-btn" onclick="window.history.back()">
+                    <span class="aui-iconfont aui-icon-left"></span>
+                </a>
+                <div class="aui-title"><%= _.get(_.get(locals, "data", {}), "title", '')%></div>
+            </header>
+        </div>
+
+        <div id="content">
+            <div id="aui-slide">
+                <div class="aui-slide-wrap" >
+                    <% _.each(JSON.parse(_.get(_.get(locals, "data", {}), "scroll", "{}")), function(val, key){ %>
+                    <div class="aui-slide-node bg-dark">
+                        <img src="<%= val%>" />
+                    </div>
+                    <% }) %>
+                </div>
+                <div class="aui-slide-page-wrap"><!--分页容器--></div>
+            </div>
+
+
+            <div class="shop_box">
+                <p class="adr"><strong>地址：</strong><%= _.get(_.get(locals, "data", {}), "address", '')%></p>
+
+                <div class="contant-btn">
+                    <a href="13209898989">订餐电话:<%= _.get(_.get(locals, "data", {}), "tel", '')%></a>
+                </div>
+
+                <div class="food">
+                    <h1>特色菜：</h1>
+                    <ul>
+                        <% _.each(JSON.parse(_.get(_.get(locals, "data", {}), "dish", "{}")), function(val, key){ %>
+                        <li>
+                            <div class="clearfix">
+                                <img class="fl" src="<%= _.get(val, "img", "")%>" width="40%" />
+                                <h2 class="food_title fr"><%= _.get(val, "title", "")%></h2>
+                            </div>
+                            <p class="food_content"><strong>制作工序：</strong><%= _.get(val, "des", "")%></p>
+
+                        </li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="/js/aui-slide.js"></script>
+    <script type="text/javascript">
+        var slide = new auiSlide({
+        container:document.getElementById("aui-slide"),
+        // "width":300,
+        "height":250,
+        "speed":300,
+        "pageShow":true,
+        "pageStyle":'dot',
+        "loop":true,
+        'dotPosition':'center',
+        currentPage:currentFun
+        })
+
+        function currentFun(index) {
+        console.log(index);
+        }
+
+        var popup = new auiPopup();
+        function showPopup(){
+        popup.show(document.getElementById("top-right"))
+        }
+
+    </script>
+</body>
+
+
+</html>

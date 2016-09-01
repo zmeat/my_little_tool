@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+
+        <title><%= _.get(_.first(locals.data), "page_title", '')%></title>
+
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
+        <link rel="stylesheet" type="text/css" href="../css/header.css" />
+        <link rel="stylesheet" type="text/css" href="../css/booking.css" />
+    </head>
+    <body>
+        <div id="wrap">
+
+            <div id="header" style="position: fixed; z-index: 999;width: 100%;">
+                <header class="aui-bar aui-bar-nav">
+                    <a class="aui-pull-left aui-btn" onclick="window.history.back()">
+                        <span class="aui-iconfont aui-icon-left"></span>
+                    </a>
+                    <div class="aui-title"><%= _.get(_.first(locals.data), "page_title", '')%></div>
+                </header>
+            </div>
+            <div id="content" style="margin-top:40px;">
+
+                <div class="single_list">
+
+                    <div class="single_list_content">
+                        <ul class="clearfix">
+                            <% _.each(_.get(locals, "data", []), function(val, key){ %>
+                                <li><a href="<%= _.get(val, 'href', '')%>">
+                                    <div class="img_box"><img src="<%= _.get(val, "img", '')%>" /></div>
+                                    <div class="content">
+                                        <h3><%= _.get(val, "title", '')%></h3>
+                                    </div>
+                                </a></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </body>
+
+</html>

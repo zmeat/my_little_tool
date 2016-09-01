@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>老兰特色羊羔肉</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/header.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/booking.css" />
+
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <header class="aui-bar aui-bar-nav">
+                <a class="aui-pull-left aui-btn" onclick="window.history.back()">
+                    <span class="aui-iconfont aui-icon-left"></span>
+                </a>
+                <div class="aui-title">老兰特色羊羔肉</div>
+            </header>
+        </div>
+
+        <div id="content">
+            <div id="aui-slide">
+                <div class="aui-slide-wrap" >
+                    
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop2/llygr_shop1.jpg" />
+                        </div>
+                     
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop2/llygr_shop2.jpg" />
+                        </div>
+                     
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop2/llygr_shop3.jpg" />
+                        </div>
+                     
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop2/llygr_shop4.jpg" />
+                        </div>
+                     
+                </div>
+                <div class="aui-slide-page-wrap"><!--分页容器--></div>
+            </div>
+
+
+            <div class="shop_box">
+                <p class="adr"><strong>地址：</strong>海原县新区广元路商业街</p>
+
+                <div class="contant-btn">
+                    <a href="13209898989">订餐电话:15309565895</a>
+                </div>
+
+                <div class="food">
+                    <h1>特色菜：</h1>
+                    <ul>
+                        
+                            <li>
+                                <div class="clearfix">
+                                    <img class="fl" src="../../images/shop2/llygr_food1.jpg" width="40%" />
+                                    <h2 class="food_title fr">碗蒸羊羔肉</h2>
+                                </div>
+                                <p class="food_content"><strong>制作工序：</strong>采用本地羊羔，请本地阿訇进行宰杀，清洗，腌制，装入碗中，放入蒸笼，加热经过两小时蒸制而成。制作过程中不添加其它食品添加剂。</p>
+
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="../../js/aui-slide.js"></script>
+    <script type="text/javascript">
+        var slide = new auiSlide({
+        container:document.getElementById("aui-slide"),
+        // "width":300,
+        "height":250,
+        "speed":300,
+        "pageShow":true,
+        "pageStyle":'dot',
+        "loop":true,
+        'dotPosition':'center',
+        currentPage:currentFun
+        })
+
+        function currentFun(index) {
+        console.log(index);
+        }
+
+        var popup = new auiPopup();
+        function showPopup(){
+        popup.show(document.getElementById("top-right"))
+        }
+
+    </script>
+</body>
+
+
+</html>

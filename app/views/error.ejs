@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+ <title><%= (locals.title ? title : '')%></title>
+ <link rel="stylesheet" href="/stylesheets/style.css" />
+ <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+
+ <script src="/javascripts/jquery.min.js"></script>
+ <script src="/javascripts/bootstrap.min.js"></script>
+</head>
+<body>
+  <h1><%= message%></h1>
+  <h2><%= error.status%></h2>
+  <pre><%= error.stack%></pre>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title><%= (locals.title ? title : '')%></title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+
+        <script src="/javascripts/jquery.min.js"></script>
+        <script src="/javascripts/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <h3>详情录入页</h3>
+        <form action="/list/upload" type="POST" role="form">
+            <div class="form-group">
+                <lable>页面名称（不含后缀）</lable>
+                <input type="text" name="name" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <lable>标题</lable>
+                <input type="text" name="title" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <lable>描述简介</lable>
+                <input type="text" name="des" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <lable>联系电话</lable>
+                <input type="text" name="tel" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <lable>地址</lable>
+                <input type="text" name="address" class="form-control"/>
+            </div>
+            <div class="form-group" id="show_url_box">
+
+            </div>
+            <div class="form-group" style="border: 2px solid #ccc;border-radius:5px">
+                <em>轮播urls</em>
+                <input type="text" name="scroll" class="form-control"/>
+                <labble class="btn btn-primary btn-sm" id="add_scroll">增加</labble>
+            </div>
+            <div class="form-group" id="show_box">
+
+            </div>
+            <div class="form-group" style="border: solid 2px #ccc;border-radius:5px">
+                <em>特色菜</em>
+                <div class="form-group">
+                    <lable>标题</lable>
+                    <input type="text" name="dish_title" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <lable>制作工艺</lable>
+                    <input type="text" name="dish_des" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <lable>缩略图(url)</lable>
+                    <input type="text" name="dish_img" class="form-control"/>
+                </div>
+                <labble class="btn btn-primary btn-sm" id="add_dish">增加</labble>
+            </div>
+        </form>
+
+        <div class="submit_box ">
+            <button class="btn btn-success" id="submit_btn">保存</button>
+        </div>
+        <script type="text/javascript">
+            var scrolls = [],
+                dishs = [];
+
+            $(function(){
+
+                $('#add_scroll').on('click', function(){
+                    var scroll = $('input[name="scroll"]').val();
+                    if(!scroll){
+                        return;
+                    }
+
+                    scrolls.push(scroll);
+                    $('input[name=scroll]').val('');
+
+                    var html = '';
+                    scrolls.forEach(function(ml){
+                        html += "<p style='color: green'>"+ml+"</p>"
+                    });
+
+                    $("#show_url_box").html(html);
+                });
+
+                $('#add_dish').on('click', function(){
+                    var dish_title = $('input[name=dish_title]').val();
+                    var dish_des = $('input[name=dish_des]').val();
+                    var dish_img = $('input[name=dish_img]').val();
+
+                    if(!dish_title || !dish_img || !dish_des){
+                        alert("请填充完整的菜品信息");
+                        return;
+                    }
+
+                    dishs.push({
+                        title: dish_title,
+                        des: dish_des,
+                        img: dish_img
+                    });
+
+                    $('input[name=dish_title]').val('');
+                    $('input[name=dish_des]').val('');
+                    $('input[name=dish_img]').val('');
+
+                    var html = "";
+
+                    dishs.forEach(function(ht){
+                        html += "<p style='color: green;'>"+ht.title+"&nbsp;"+ ht.img+"</p>"
+                    });
+
+                    $("#show_box").html(html);
+                });
+
+                $('#submit_btn').on('click', function(){
+                    var title = $('input[name=title]').val();
+                    var tel = $('input[name=tel]').val();
+                    var des = $('input[name=des]').val();
+                    var address = $('input[name=address]').val();
+                    var name = $('input[name=name]').val();
+
+                    var a = window.confirm("确定要提交吗");
+                    var data = {
+                        name: name,
+                        title: title,
+                        tel: tel,
+                        des: des,
+                        address: address,
+                        scroll: JSON.stringify(scrolls),
+                        dish: JSON.stringify(dishs)
+                    }
+
+                    if(a){
+                        $.ajax({
+                            url: "/detail/add",
+                            type: "POST",
+                            data: data,
+                            dataType: 'json',
+                            success: function(data){
+                                console.log(data);
+                            },
+                            error: function(err){
+                                console.log(err);
+                            }
+                        });
+                    }
+
+                });
+            });
+        </script>
+    </body>
+</html>

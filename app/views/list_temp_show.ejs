@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%= _.get(_.first(locals.data), "page_title", '')%></title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="/css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="/css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="/css/header.css" />
+
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <header class="aui-bar aui-bar-nav">
+                <a class="aui-pull-left aui-btn" onclick="window.history.back()">
+                    <span class="aui-iconfont aui-icon-left"></span>
+                </a>
+                <div class="aui-title"><%= _.get(_.first(locals.data), "page_title", '')%></div>
+
+            </header>
+        </div>
+        <div id="content">
+
+            <div class="list-wrap">
+                <ul>
+                    <%  _.each(_.get(locals, 'data', []), function(val, key){ %>
+                    <li><a href="<%= _.get(val, 'href', '')%>">
+                        <div class="img-box"><img src="<%= _.get(val, 'img', '')%>" /></div>
+                        <div class="text-box">
+                            <div class="title"><%= _.get(val, 'title', '')%></div>
+                            <div class="des">
+                                <% if(_.get(val, 'tel', '')){ %>
+                                电话：<%= _.get(val, 'tel', '')%><br/>
+                                <% } %>
+
+                                <% if(_.get(val, 'address', '')){ %>
+                                地址：<%= _.get(val, 'address', '')%>
+                                <% } %>
+
+                            </div>
+                        </div>
+                    </a></li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+
+<script type="text/javascript" src="/js/aui-slide.js"></script>
+<script type="text/javascript">
+    var slide = new auiSlide({
+    container:document.getElementById("aui-slide"),
+    // "width":300,
+    "height":200,
+    "speed":300,
+    "pageShow":true,
+    "pageStyle":'dot',
+    "loop":true,
+    'dotPosition':'center',
+    currentPage:currentFun
+    })
+
+    function currentFun(index) {
+    console.log(index);
+    }
+</script>
+<script type="text/javascript" src="/js/api.js" ></script>
+<script type="text/javascript" src="/js/aui-popup.js" ></script>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>海原县七营镇志强新疆拌面馆</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/header.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/booking.css" />
+
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <header class="aui-bar aui-bar-nav">
+                <a class="aui-pull-left aui-btn" onclick="window.history.back()">
+                    <span class="aui-iconfont aui-icon-left"></span>
+                </a>
+                <div class="aui-title">海原县七营镇志强新疆拌面馆</div>
+            </header>
+        </div>
+
+        <div id="content">
+            <div id="aui-slide">
+                <div class="aui-slide-wrap" >
+                    
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop/xjbm_shop1.jpg" />
+                        </div>
+                     
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop/xjbm_shop2.jpg" />
+                        </div>
+                     
+                </div>
+                <div class="aui-slide-page-wrap"><!--分页容器--></div>
+            </div>
+
+
+            <div class="shop_box">
+                <p class="adr"><strong>地址：</strong>海原县七营镇七营中街</p>
+
+                <div class="contant-btn">
+                    <a href="13209898989">订餐电话:13519257683</a>
+                </div>
+
+                <div class="food">
+                    <h1>特色菜：</h1>
+                    <ul>
+                        
+                            <li>
+                                <div class="clearfix">
+                                    <img class="fl" src="../../images/shop/xjbm_food1.jpg" width="40%" />
+                                    <h2 class="food_title fr">大盘鸡</h2>
+                                </div>
+                                <p class="food_content"><strong>制作工序：</strong>1、选用本地土鸡。整鸡剁成块，焯去血沫杂质,然后用把切好的鸡块,放锅里,加入水,水沸腾后,把鸡块捞出来先放一旁.2、土豆、青椒切块。3、油热后放入花椒、白砂糖等炸香，放入焯好的鸡块翻炒至变色。4、放入葱姜、盐、酱油、花椒、大料、料酒，开水炖20分钟。水以没过鸡块为宜。水多一点可以更入味。5、放入土豆继续炖10分钟。6、倒入青辣椒干辣椒。起上色作用，辣味主要靠干辣椒了。7、稍微翻炒，便可出锅了。8、再配上煮好的皮带面，美味的大盘鸡就做好了</p>
+
+                            </li>
+                        
+                            <li>
+                                <div class="clearfix">
+                                    <img class="fl" src="../../images/shop/xjbm_food2.jpg" width="40%" />
+                                    <h2 class="food_title fr">鸡蛋拌面</h2>
+                                </div>
+                                <p class="food_content"><strong>制作工序：</strong>               </p>
+
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="../../js/aui-slide.js"></script>
+    <script type="text/javascript">
+        var slide = new auiSlide({
+        container:document.getElementById("aui-slide"),
+        // "width":300,
+        "height":250,
+        "speed":300,
+        "pageShow":true,
+        "pageStyle":'dot',
+        "loop":true,
+        'dotPosition':'center',
+        currentPage:currentFun
+        })
+
+        function currentFun(index) {
+        console.log(index);
+        }
+
+        var popup = new auiPopup();
+        function showPopup(){
+        popup.show(document.getElementById("top-right"))
+        }
+
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>海原县李旺镇穆斯林和平餐厅</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/header.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/booking.css" />
+
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <header class="aui-bar aui-bar-nav">
+                <a class="aui-pull-left aui-btn" onclick="window.history.back()">
+                    <span class="aui-iconfont aui-icon-left"></span>
+                </a>
+                <div class="aui-title">海原县李旺镇穆斯林和平餐厅</div>
+            </header>
+        </div>
+
+        <div id="content">
+            <div id="aui-slide">
+                <div class="aui-slide-wrap" >
+                    
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop/hp_shop.jpg" />
+                        </div>
+                     
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop/hp_shop1.jpg" />
+                        </div>
+                     
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop/hp_shop2.jpg" />
+                        </div>
+                     
+                </div>
+                <div class="aui-slide-page-wrap"><!--分页容器--></div>
+            </div>
+
+
+            <div class="shop_box">
+                <p class="adr"><strong>地址：</strong>海原县李旺镇老街</p>
+
+                <div class="contant-btn">
+                    <a href="13209898989">订餐电话:18295469997</a>
+                </div>
+
+                <div class="food">
+                    <h1>特色菜：</h1>
+                    <ul>
+                        
+                            <li>
+                                <div class="clearfix">
+                                    <img class="fl" src="../../images/shop/hx_food1.jpg" width="40%" />
+                                    <h2 class="food_title fr">蒸碗羊羔肉</h2>
+                                </div>
+                                <p class="food_content"><strong>制作工序：</strong>羊羔肉最好选用胸叉、上脊骨部位，剁成长方形条，用清凉水洗净，摆在碗内，放上生姜、大葱、大蒜；再放上几粒生花椒，上笼蒸30分钟左右；然后扣至汤盘内上桌，配以醋、蒜汁、盐等调料佐食。</p>
+
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="../../js/aui-slide.js"></script>
+    <script type="text/javascript">
+        var slide = new auiSlide({
+        container:document.getElementById("aui-slide"),
+        // "width":300,
+        "height":250,
+        "speed":300,
+        "pageShow":true,
+        "pageStyle":'dot',
+        "loop":true,
+        'dotPosition':'center',
+        currentPage:currentFun
+        })
+
+        function currentFun(index) {
+        console.log(index);
+        }
+
+        var popup = new auiPopup();
+        function showPopup(){
+        popup.show(document.getElementById("top-right"))
+        }
+
+    </script>
+</body>
+
+
+</html>

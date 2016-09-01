@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title><%= (locals.title ? title : '')%></title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+
+        <script src="/javascripts/jquery.min.js"></script>
+        <script src="/javascripts/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <h3>列表录入页</h3>
+        <form action="/list/add" role="form">
+            <div class="form-group">
+                <lable>页面名称（不含后缀 多条列表项目只须多次录入即可）</lable>
+                <input type="text" name="name" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <lable>页面顶部导航栏标题</lable>
+                <input type="text" name="page_title" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <lable>标题</lable>
+                <input type="text" name="title" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <lable>描述简介</lable>
+                <input type="text" name="des" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <lable>链接地址（url）</lable>
+                <input type="text" name="href" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <lable>缩略图(url)</lable>
+                <input type="text" name="img" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <lable>联系电话</lable>
+                <input type="text" name="tel" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <lable>地址</lable>
+                <input type="text" name="address" class="form-control"/>
+            </div>
+            <div class="submit_box ">
+                <button class="btn btn-success" type="submit">保存</button>
+            </div>
+        </form>
+        <button class="btn btn-primary" id="get_btn">获取</button>
+
+
+        <script type="text/javascript">
+            $(function(){
+                $("#get_btn").on('click', function(){
+                    var name = $("input[name=name]").val();
+
+                    if(!name){
+                        alert("页面名称不能为空");
+                        return;
+                    }
+
+                    var a = window.confirm("该操作可能会清除正字编辑的内容！！！");
+
+                    if(a){
+                        $.ajax({
+                            url: "/list/get",
+                            type: "POST",
+                            data : {
+                                name: name
+                            },
+                            dataType: 'json',
+                            success:function(data){
+                                console.log(data);
+
+                                if(data.title){
+                                    $('input[name=title]').val(data.title ? data.title : "");
+                                    $('input[name=des]').val(data.des ? data.des : "");
+                                    $('input[name=img]').val(data.img ? data.img : "");
+                                    $('input[name=tel]').val(data.tel ? data.tel : "");
+                                    $('input[name=address]').val(data.address ? data.address : "");
+                                    $('input[name=page_title]').val(data.page_title ? data.page_title : "");
+                                    $('input[name=href]').val(data.href ? data.href : "");
+                                }
+                            },
+                            error: function(err){
+                                console.log(err);
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

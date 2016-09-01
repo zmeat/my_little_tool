@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>海原县李旺镇伊德雷斯餐厅</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/header.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/booking.css" />
+
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <header class="aui-bar aui-bar-nav">
+                <a class="aui-pull-left aui-btn" onclick="window.history.back()">
+                    <span class="aui-iconfont aui-icon-left"></span>
+                </a>
+                <div class="aui-title">海原县李旺镇伊德雷斯餐厅</div>
+            </header>
+        </div>
+
+        <div id="content">
+            <div id="aui-slide">
+                <div class="aui-slide-wrap" >
+                    
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop/ydls_shop1.jpg" />
+                        </div>
+                     
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../../images/shop/ydls_shop2.jpg" />
+                        </div>
+                     
+                </div>
+                <div class="aui-slide-page-wrap"><!--分页容器--></div>
+            </div>
+
+
+            <div class="shop_box">
+                <p class="adr"><strong>地址：</strong>海原县李旺镇新街</p>
+
+                <div class="contant-btn">
+                    <a href="13209898989">订餐电话:18095522555</a>
+                </div>
+
+                <div class="food">
+                    <h1>特色菜：</h1>
+                    <ul>
+                        
+                            <li>
+                                <div class="clearfix">
+                                    <img class="fl" src="../../images/shop/ljscm_food3.jpg" width="40%" />
+                                    <h2 class="food_title fr">生汆面</h2>
+                                </div>
+                                <p class="food_content"><strong>制作工序：</strong>1、番茄、葱姜蒜切片，牛羊肉丸子中加少许香菜、部分葱姜蒜、酱油、盐腌制十分钟左右。2.热油，下葱姜蒜、番茄炒香。3.炒出汤汁的时候加少许花椒面、盐炒香。4.加水烧开。5、选用优质永良面粉和面，在开水锅中下成揪面片。6.倒入腌好的牛羊肉丸子，不要搅拌。7.煮开后把面和肉拌匀，加盐调味，煮熟出锅即可</p>
+
+                            </li>
+                        
+                            <li>
+                                <div class="clearfix">
+                                    <img class="fl" src="../../images/shop/ydls_food1.jpg" width="40%" />
+                                    <h2 class="food_title fr">凉拌牛肉</h2>
+                                </div>
+                                <p class="food_content"><strong>制作工序：</strong>                    </p>
+
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="../../js/aui-slide.js"></script>
+    <script type="text/javascript">
+        var slide = new auiSlide({
+        container:document.getElementById("aui-slide"),
+        // "width":300,
+        "height":250,
+        "speed":300,
+        "pageShow":true,
+        "pageStyle":'dot',
+        "loop":true,
+        'dotPosition':'center',
+        currentPage:currentFun
+        })
+
+        function currentFun(index) {
+        console.log(index);
+        }
+
+        var popup = new auiPopup();
+        function showPopup(){
+        popup.show(document.getElementById("top-right"))
+        }
+
+    </script>
+</body>
+
+
+</html>
